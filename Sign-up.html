@@ -133,6 +133,7 @@
 
       if (errors.length === 0) {
         message = "Registration is successful! Welcome to MushROOMS";
+        window.location.replace("index.html");
       } else {
         message = "Registration failed. Errors:\n" + errors.join("\n");
       }
