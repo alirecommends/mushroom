@@ -4,19 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrollable Entries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Gloock&family=Paytone+One&family=Roboto:wght@100;300;400;500;700&family=Unna:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="indexstyle.css">
+  <script src="https://kit.fontawesome.com/b284ece004.js" crossorigin="anonymous"></script>
+  <title>Scrollable Entries</title>
+
+
 </head>
 
 <body>
-
+  <!-- Header starts -->
+  <header>
+    <div class="logorow column" style="flex-grow: 1;"><a class="logorow column" style="flex-grow: 1;"
+        href="index.html"><img src="images/mushroom-logo.png">
+        <h1 style="clear: both;">MushROOM</h1>
+      </a><br>
+    </div>
+    <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
+      <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
+          class="input-field searchbar">
+        <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+        <button class="secondarybtn"><i class="fa fa-filter"></i> Filters</button>
+      </div>
+  </header>
+  <!-- //Header ends -->
   <div id="container">
 
-  <div id="profile-box">
+    <div id="profile-box">
       <h3>Username</h3>
-       <button>LOGIN</button>
-              <button>SINGUP</button>
-   
+      <button>LOGIN</button>
+      <button>SINGUP</button>
+
     </div>
 
     <div id="sidebar">
@@ -31,7 +58,7 @@
       </form>
       <form action="map_new.html">
         <input type="submit" value="Mushroom maps" />
-        
+
       </form>
     </div>
 
@@ -80,7 +107,12 @@
 
     </div>
   </div>
-
+  <!--FOOTER -->
+  <footer>
+    <br>
+    All rights reserved by MushROOM Media. 2023
+  </footer>
+  <!--FOOTER ends -->
 
 
 </body>
