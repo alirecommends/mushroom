@@ -11,12 +11,29 @@
       height: 800px;
       width: 100%;
     }
+
+    body {
+      background-color: #F8EFE9;
+      color: #512D7A;
+      /* Font color */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+
+    }
   </style>
 </head>
 
 <body>
+
   <h1>Mushroom Map</h1>
-  <h2>Check Mushrooms Near You</h2>
+  <h2>Check Out the Mushrooms in Your Area</h2>
   <div id="map"></div>
 
   <script>
@@ -31,19 +48,19 @@
       var markers = [
         {
           coords: { lat: 43.651070, lng: -79.347015 },
-          content: '<div><h1>Mushroom 1</h1><img src="path_to_mushroom1_image.jpg" alt="Mushroom 1" style="width:100px;"><a href="link_to_mushroom1_page.html">More Info</a></div>'
+          content: '<div><h1>Wood Hedgehog</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/1871609/medium.jpg" alt="Wood Hedgehog" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635705">More Info</a></div>'
         },
         {
           coords: { lat: 43.665973, lng: -79.397483 },
-          content: '<div><h1>Mushroom 2</h1><img src="path_to_mushroom2_image.jpg" alt="Mushroom 2" style="width:100px;"><a href="link_to_mushroom2_page.html">More Info</a></div>'
+          content: '<div><h1>Common Ink Cap</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/2893589/large.jpeg" alt="Common Ink Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635707">More Info</a></div>'
         },
         {
           coords: { lat: 43.639679, lng: -79.455993 },
-          content: '<div><h1>Mushroom 3</h1><img src="path_to_mushroom3_image.jpg" alt="Mushroom 3" style="width:100px;"><a href="link_to_mushroom3_page.html">More Info</a></div>'
+          content: '<div><h1>indigo milk cap</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/66266/medium.jpg" alt="indigo milk cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635696">More Info</a></div>'
         },
         {
           coords: { lat: 43.651070, lng: -79.547515 },
-          content: '<div><h1>New Mushroom</h1><img src="path_to_new_mushroom_image.jpg" alt="New Mushroom" style="width:100px;"><a href="link_to_new_mushroom_page.html">More Info</a></div>'
+          content: '<div><h1>lobster mushroom</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/7069967/medium.jpeg" alt="lobster mushroom" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635698">More Info</a></div>'
         }
       ];
 
@@ -62,12 +79,8 @@
             content: props.content
           });
 
-          marker.addListener('mouseover', function () {
+          marker.addListener('click', function () {
             infoWindow.open(map, marker);
-          });
-
-          marker.addListener('mouseout', function () {
-            infoWindow.close();
           });
         }
       }
