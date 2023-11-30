@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Gloock&family=Paytone+One&family=Roboto:wght@100;300;400;500;700&family=Unna:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b284ece004.js" crossorigin="anonymous"></script>
+  <title>Search</title>
+  <style>
+    button {
+      background-color: #512D7A;
+      color: #EAD1DC;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
 
+  <!-- Header starts -->
+  <header>
+    <div class="logorow column" style="flex-grow: 1;"><a class="logorow column" style="flex-grow: 1;"
+        href="index.html"><img src="images/mushroom-logo.png">
+        <h1 style="clear: both;">MushROOM</h1>
+      </a><br>
+    </div>
+    <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
+      <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
+          class="input-field searchbar">
+        <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+        <button class="secondarybtn"><i class="fa fa-filter"></i> Filters</button>
+      </div>
+  </header>
+  <!-- //Header ends -->
   <div class="container">
     <div class="formcontainer">
-      <h1 id="welcome">Welcome to MushROOM</h1>
+      <h2 id="welcome">Welcome to MushROOM</h2>
 
       <label for="first-name">First Name:</label>
       <input type="text" id="first-name" name="first-name" pattern="[A-Za-z]+" title="Only letters are allowed">
@@ -44,52 +83,60 @@
       <input type="checkbox" id="terms" name="terms" value="terms">
       <label for="terms"> Agree to our Terms and Conditions</label><br><br>
 
-      <button type="button" onclick="validateForm()">Sign Up</button>
+      <button type="button" onclick="validateForm()" class="btn">Sign Up</button>
     </div>
     <div class="image-container">
-      <img src="mm.jpeg" alt="MushROOM Image" style="width: 500px">
+      <img src="images/mm.jpeg" alt="MushROOM Image" style="width: 500px">
     </div>
-</div>
-    <script>
-      function validateForm() {
-        var firstName = document.getElementById("first-name").value;
-        var lastName = document.getElementById("last-name").value;
-        var phone = document.getElementById("phone").value;
-        var password = document.getElementById("pwd").value;
-
-        var firstNameRegex = /^[A-Za-z]+$/;
-        var phoneRegex = /^[0-9]{10}$/;
-        var passwordRegex = /^.{6,}$/;
-
-        var errors = [];
-
-        if (!firstNameRegex.test(firstName)) {
-          errors.push("First name should only contain letters");
-        }
-
-        if (!firstNameRegex.test(lastName)) {
-          errors.push("Last name should only contain letters");
-        }
-
-        if (!phoneRegex.test(phone)) {
-          errors.push("Phone number should be 10 digits");
-        }
-
-        if (!passwordRegex.test(password)) {
-          errors.push("Password must be at least 6 characters long");
-        }
-
-        var message = "";
-
-        if (errors.length === 0) {
-          message = "Registration is successful! Welcome to MushROOMS";
-        } else {
-          message = "Registration failed. Errors:\n" + errors.join("\n");
-        }
-
-        alert(message);
-      }
-    </script>
   </div>
+  <!--FOOTER -->
+  <footer>
+    <br>
+    All rights reserved by MushROOM Media. 2023
+  </footer>
+  <!--FOOTER ends -->
+
+  <script>
+    function validateForm() {
+      var firstName = document.getElementById("first-name").value;
+      var lastName = document.getElementById("last-name").value;
+      var phone = document.getElementById("phone").value;
+      var password = document.getElementById("pwd").value;
+
+      var firstNameRegex = /^[A-Za-z]+$/;
+      var phoneRegex = /^[0-9]{10}$/;
+      var passwordRegex = /^.{6,}$/;
+
+      var errors = [];
+
+      if (!firstNameRegex.test(firstName)) {
+        errors.push("First name should only contain letters");
+      }
+
+      if (!firstNameRegex.test(lastName)) {
+        errors.push("Last name should only contain letters");
+      }
+
+      if (!phoneRegex.test(phone)) {
+        errors.push("Phone number should be 10 digits");
+      }
+
+      if (!passwordRegex.test(password)) {
+        errors.push("Password must be at least 6 characters long");
+      }
+
+      var message = "";
+
+      if (errors.length === 0) {
+        message = "Registration is successful! Welcome to MushROOMS";
+      } else {
+        message = "Registration failed. Errors:\n" + errors.join("\n");
+      }
+
+      alert(message);
+    }
+  </script>
+
 </body>
+
 </html>

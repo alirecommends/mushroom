@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Gloock&family=Paytone+One&family=Roboto:wght@100;300;400;500;700&family=Unna:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b284ece004.js" crossorigin="anonymous"></script>
+  <title>Mushroom Map</title>
+  <style>
+    #map {
+      height: 800px;
+      width: 100%;
+    }
+
+    body {
+      background-color: #F8EFE9;
+      color: #512D7A;
+      /* Font color */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Header starts -->
+  <header>
+    <div class="logorow column" style="flex-grow: 1;"><a class="logorow column" style="flex-grow: 1;"
+        href="index.html"><img src="images/mushroom-logo.png">
+        <h1 style="clear: both;">MushROOM</h1>
+      </a><br>
+    </div>
+    <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
+      <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
+          class="input-field searchbar">
+        <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+        <button class="secondarybtn"><i class="fa fa-filter"></i> Filters</button>
+      </div>
+  </header>
+  <!-- //Header ends -->
+  <h2>Mushroom Map</h2>
+  <h2>Check Out Safe Mushrooms Grow in Your Area</h2>
+
+  <div style="text-align:center; margin-bottom: 10px;">
+    <select id="mushroomFilter">
+      <option value="all">All Mushrooms</option>
+      <option value="Wood Hedgehog">Wood Hedgehog</option>
+      <option value="Common Ink Cap">Common Ink Cap</option>
+      <option value="Indigo Milk Cap">Indigo Milk Cap</option>
+      <option value="Lobster Mushroom">Lobster Mushroom</option>
+    </select>
+  </div>
+
+  <div id="map"></div>
+  <!--FOOTER -->
+  <footer>
+    <br>
+    All rights reserved by MushROOM Media. 2023
+  </footer>
+  <!--FOOTER ends -->
+  <script>
+    function initMap() {
+      var options = {
+        zoom: 12,
+        center: { lat: 43.651070, lng: -79.347015 }
+      }
+
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      var markers = [
+        {
+          coords: { lat: 43.645679, lng: -79.496593 },
+          content: '<div><h1>Wood Hedgehog</h1><p>Can be found at: <br>Can be found at:<br>Kings Mill Park<br>105 Riverwood Pkwy<br>Etobicoke, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/1871609/medium.jpg" alt="Wood Hedgehog" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635705">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.698405, lng: -79.381650 },
+          content: '<div><h1>Wood Hedgehog</h1><p>Can be found at:<br>Crothers Woods<br>Crothers Woods Trail<br>East York, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/1871609/medium.jpg" alt="Wood Hedgehog" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635705">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.662053, lng: -79.390920 },
+          content: '<div><h1>Common Ink Cap</h1><p>Can be found at:<br>Queens Park<br>110 Wellesley St W<br>Toronto, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/2893589/large.jpeg" alt="Common Ink Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635707">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.688292, lng: -79.357822 },
+          content: '<div><h1>Common Ink Cap</h1><p>Can be found at:<br>Evergreen Brick Works<br>550 Bayview Ave<br>Toronto, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/2893589/large.jpeg" alt="Common Ink Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635707">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.702075, lng: -79.318015 },
+          content: '<div><h1>Indigo Milk Cap</h1><p>Can be found at:<br>Stan Wadlow Park<br>373 Cedarvale Ave<br>Toronto, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/66266/medium.jpg" alt="Indigo Milk Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635696">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.673821, lng: -79.506663 },
+          content: '<div><h1>Indigo Milk Cap</h1><p>Can be found at:<br>James Gardens<br>99 Edenbridge Dr<br>Etobicoke, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/66266/medium.jpg" alt="Indigo Milk Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635696">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.651070, lng: -79.547515 },
+          content: '<div><h1>Lobster Mushroom</h1><p>Can be found at:<br>Echo Valley Park<br>1124 Kipling Ave<br>Etobicoke, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/7069967/medium.jpeg" alt="Lobster Mushroom" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635698">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.683115, lng: -79.364868 },
+          content: '<div><h1>Lobster Mushroom</h1><p>Can be found at:<br>Evergreen Brick Works<br>550 Bayview Ave<br>Toronto, ON</p><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/7069967/medium.jpeg" alt="Lobster Mushroom" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635698">More Info</a></div>'
+        }
+      ];
+
+
+      markers.forEach(function (marker) {
+        marker.type = marker.content.match(/<h1>(.*?)<\/h1>/)[1];
+        addMarker(marker);
+      });
+
+      function addMarker(props) {
+        var defaultIcon = 'http://maps.google.com/mapfiles/marker.png'
+        var hoverIcon = {
+          url: 'https://cdn-icons-png.flaticon.com/512/2069/2069395.png',
+          scaledSize: new google.maps.Size(36, 39),
+        };
+
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map,
+          icon: defaultIcon
+
+        });
+
+        props.marker = marker;
+
+        if (props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+
+          marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+          });
+        }
+
+        marker.addListener('mouseover', function () {
+          marker.setIcon(hoverIcon);
+        });
+
+        marker.addListener('mouseout', function () {
+          marker.setIcon(defaultIcon);
+        });
+
+      }
+
+      function filterMarkers(type) {
+        markers.forEach(function (markerData) {
+          if (type === 'all' || markerData.type === type) {
+            markerData.marker.setVisible(true);
+          } else {
+            markerData.marker.setVisible(false);
+          }
+        });
+      }
+
+      document.getElementById('mushroomFilter').addEventListener('change', function () {
+        filterMarkers(this.value);
+      });
+    }
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCez87Yrs7WOgwiMQBLnNSt4TBY8h-GGKg&callback=initMap">
+    </script>
+
+</body>
+
+</html>
