@@ -1,0 +1,47 @@
+body {
+    font-family: 'Jost', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    background-color: #F8EFE9;
+}
+
+h1,
+#galleryTitle {
+    font-family: 'Livvic', 'Jost', Arial, sans-serif;
+}
+
+#gallery {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#slideshow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.slide {
+    flex: 0 0 calc(33.33% - 2cm);
+    box-sizing: border-box;
+    margin-bottom: 1cm;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.mushroomName {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #341f4f;
+}
+
+#

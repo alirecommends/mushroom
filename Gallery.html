@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Gallery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic:wght@700&family=Jost:wght@400;600&display=swap">
+
+    <style>
+        body {
+            font-family: 'Jost', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 20px;
+            background-color: #F8EFE9;
+        }
+
+        h1,
+        #galleryTitle {
+            font-family: 'Livvic', 'Jost', Arial, sans-serif;
+        }
+
+        #gallery {
+            max-width: 100%;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #slideshow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .slide {
+            flex: 0 0 calc(33.33% - 2cm);
+            box-sizing: border-box;
+            margin-bottom: 1cm;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .mushroomName {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #341f4f;
+        }
+
+        #galleryTitle {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #341f4f;
+        }
+
+        #searchBar {
+            margin-top: 1cm;
+            text-align: left;
+        }
+
+        #searchBar label {
+            margin-right: 10px;
+        }
+
+        #mushroomFilter {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="galleryTitle">Jacks Mushroom Gallery</h1>
+    <div id="searchBar">
+        <label for="mushroomFilter">Filter by Mushroom Type:</label>
+        <select id="mushroomFilter" onchange="filterGallery()">
+            <option value="all">All Mushrooms</option>
+            <option value="portobello">Portobello</option>
+            <option value="oyster">Oyster</option>
+            <option value="button">Button</option>
+            <option value="morel">Morel</option>
+            <option value="flyAgaric">Fly Agaric</option>
+        </select>
+
+        <label for="searchInput">Search:</label>
+        <input type="text" id="searchInput" placeholder="Enter mushroom name">
+
+        <!-- Removed the onclick attribute from the button -->
+        <button>Apply</button>
+    </div>
+    <div id="gallery">
+        <div id="slideshow">
+
+            <div class="slide" data-type="portobello" id="portobelloSlide">
+                <img src="image1.jpg" alt="Mushroom 1">
+                <div class="mushroomName">Amanita muscaria</div>
+            </div>
+            <div class="slide" data-type="oyster">
+                <img src="image2.jpg" alt="Mushroom 2">
+                <div class="mushroomName">Death Cap</div>
+            </div>
+            <div class="slide" data-type="button">
+                <img src="image3.jpg" alt="Mushroom 3">
+                <div class="mushroomName">Oyster Mushroom</div>
+            </div>
+            <div class="slide" data-type="morel">
+                <img src="image4.jpg" alt="Mushroom 4">
+                <div class="mushroomName">Honey Fungus</div>
+            </div>
+            <div class="slide" data-type="button">
+                <img src="image5.jpg" alt="Mushroom 5">
+                <div class="mushroomName">Linzhi</div>
+            </div>
+            <div class="slide" data-type="portobello">
+                <img src="image6.jpg" alt="Mushroom 6">
+                <div class="mushroomName">Pholiota</div>
+            </div>
+            <div class="slide" data-type="oyster">
+                <img src="image7.jpg" alt="Mushroom 7">
+                <div class="mushroomName">Pholiota squarrosa</div>
+            </div>
+            <div class="slide" data-type="morel">
+                <img src="image8.jpg" alt="Mushroom 8">
+                <div class="mushroomName">Omphalotus japonicus</div>
+            </div>
+            <div class="slide" data-type="flyAgaric">
+                <img src="image9.jpg" alt="Mushroom 9">
+                <div class="mushroomName">Mycena haematopus</div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+
+    <script>
+        function filterGallery() {
+            var filterType = document.getElementById("mushroomFilter").value.toLowerCase();
+            var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            var slides = document.querySelectorAll('.slide');
+
+            slides.forEach(function (slide) {
+                var type = slide.getAttribute('data-type').toLowerCase();
+                var name = slide.querySelector('.mushroomName').innerText.toLowerCase();
+
+                if (filterType === 'all') {
+                    var display = name.includes(searchTerm) || searchTerm === '';
+                    slide.style.display = display ? 'block' : 'none';
+                } else if (filterType === 'portobello') {
+                    var display = type === 'portobello' && (name.includes(searchTerm) || searchTerm === '');
+                    document.getElementById('portobelloSlide').style.display = display ? 'block' : 'none';
+                    slide.style.display = (display && type === 'portobello') ? 'block' : 'none';
+                } else {
+                    var display = type === filterType && (name.includes(searchTerm) || searchTerm === '');
+                    slide.style.display = display ? 'block' : 'none';
+                    document.getElementById('portobelloSlide').style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
