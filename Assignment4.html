@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Mushroom Gallery</title>
     <style>
-        
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -13,54 +14,64 @@
             align-items: center;
             text-align: center;
             margin: 20px;
-            background-color: #EAD1DC; 
+            background-color: #EAD1DC;
         }
+
         #gallery {
-            max-width: 100%; 
+            max-width: 100%;
             overflow: hidden;
             border: 1px solid #ccc;
             border-radius: 8px;
         }
+
         #slideshow {
             display: flex;
-            flex-wrap: wrap; 
-            justify-content: space-between; 
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
+
         .slide {
-            flex: 0 0 calc(33.33% - 2cm); 
+            flex: 0 0 calc(33.33% - 2cm);
             box-sizing: border-box;
-            margin-bottom: 1cm; 
+            margin-bottom: 1cm;
         }
+
         .slide img {
-            width: 100%; 
+            width: 100%;
             height: auto;
-            border-bottom: 1px solid #ccc; 
+            border-bottom: 1px solid #ccc;
         }
+
         .mushroomName {
             margin-top: 5px;
             font-size: 14px;
             color: #341f4f;
         }
+
         #galleryTitle {
             margin-top: 20px;
-            font-size: 36px; 
-            color: #341f4f; 
+            font-size: 36px;
+            color: #341f4f;
         }
+
         #searchBar {
             position: absolute;
             top: 0;
-            left: 0; 
+            left: 0;
             margin: 10px;
             text-align: left;
         }
+
         #searchBar label {
             margin-right: 10px;
         }
+
         #mushroomFilter {
-            margin-right: 10px; 
+            margin-right: 10px;
         }
     </style>
 </head>
+
 <body>
     <h1 id="galleryTitle">Jacks Mushroom Gallery</h1>
     <div id="searchBar">
@@ -73,15 +84,15 @@
             <option value="morel">Morel</option>
             <option value="flyAgaric">Fly Agaric</option>
         </select>
-        
+
         <label for="searchInput">Search:</label>
         <input type="text" id="searchInput" placeholder="Enter mushroom name">
-        
+
         <button onclick="filterGallery()">Apply</button>
     </div>
     <div id="gallery">
         <div id="slideshow">
-            
+
             <div class="slide" data-type="portabello">
                 <img src="image1.jpg" alt="Mushroom 1">
                 <div class="mushroomName">Amanita muscaria</div>
@@ -128,7 +139,7 @@
             var searchTerm = document.getElementById("searchInput").value.toLowerCase();
             var slides = document.querySelectorAll('.slide');
 
-            slides.forEach(function(slide) {
+            slides.forEach(function (slide) {
                 var type = slide.getAttribute('data-type').toLowerCase();
                 var name = slide.querySelector('.mushroomName').innerText.toLowerCase();
                 var display = (filterType === 'all' || type === filterType) && (name.includes(searchTerm) || searchTerm === '');
@@ -138,8 +149,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-

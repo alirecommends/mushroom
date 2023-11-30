@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
   <title>Mushroom Map</title>
   <style>
     #map {
@@ -21,31 +23,31 @@
     function initMap() {
       var options = {
         zoom: 12,
-        center: {lat: 43.651070, lng: -79.347015}
+        center: { lat: 43.651070, lng: -79.347015 }
       }
 
       var map = new google.maps.Map(document.getElementById('map'), options);
 
       var markers = [
         {
-          coords: {lat: 43.651070, lng: -79.347015},
+          coords: { lat: 43.651070, lng: -79.347015 },
           content: '<div><h1>Mushroom 1</h1><img src="path_to_mushroom1_image.jpg" alt="Mushroom 1" style="width:100px;"><a href="link_to_mushroom1_page.html">More Info</a></div>'
         },
         {
-          coords: {lat: 43.665973, lng: -79.397483},
+          coords: { lat: 43.665973, lng: -79.397483 },
           content: '<div><h1>Mushroom 2</h1><img src="path_to_mushroom2_image.jpg" alt="Mushroom 2" style="width:100px;"><a href="link_to_mushroom2_page.html">More Info</a></div>'
         },
         {
-          coords: {lat: 43.639679, lng: -79.455993},
+          coords: { lat: 43.639679, lng: -79.455993 },
           content: '<div><h1>Mushroom 3</h1><img src="path_to_mushroom3_image.jpg" alt="Mushroom 3" style="width:100px;"><a href="link_to_mushroom3_page.html">More Info</a></div>'
         },
         {
-          coords: {lat: 43.651070, lng: -79.547515},
+          coords: { lat: 43.651070, lng: -79.547515 },
           content: '<div><h1>New Mushroom</h1><img src="path_to_new_mushroom_image.jpg" alt="New Mushroom" style="width:100px;"><a href="link_to_new_mushroom_page.html">More Info</a></div>'
         }
       ];
 
-      markers.forEach(function(markerData) {
+      markers.forEach(function (markerData) {
         addMarker(markerData);
       });
 
@@ -60,11 +62,11 @@
             content: props.content
           });
 
-          marker.addListener('mouseover', function() {
+          marker.addListener('mouseover', function () {
             infoWindow.open(map, marker);
           });
 
-          marker.addListener('mouseout', function() {
+          marker.addListener('mouseout', function () {
             infoWindow.close();
           });
         }
@@ -74,7 +76,8 @@
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCez87Yrs7WOgwiMQBLnNSt4TBY8h-GGKg&callback=initMap">
-  </script>
+    </script>
 
 </body>
+
 </html>
