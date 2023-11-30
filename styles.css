@@ -1,0 +1,23 @@
+body {
+    background-color: #F8EFE9;
+    font-family: Arial, sans-serif;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+h1 {
+    font-family: 'Times New Roman', serif;
+    color: #512D7A;
+}
+
+button {
+    background-color: #512D7A;
+    color: #EAD1DC;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
