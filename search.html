@@ -28,73 +28,101 @@
         <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
             <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
                     class="input-field searchbar">
-                <button class="btn"><i class="fa fa-search"></i> Search</button>
+                <button id="searchbtn" class="btn"><i class="fa fa-search"></i> Search</button>
                 <button class="btn"><i class="fa fa-filter"></i> Filters</button>
             </div>
     </header>
     <!-- //Header ends -->
 
-    <p style="margin-top: 36px;">17 results total</p>
-    <span class="searchrow column"><img src="images/mushroom.png" class="icon_title">
-        <h3>Mushrooms</h3>
-    </span>
-    <div class="cardstack">
-        <!-- product card 1 -->
-        <section class="card">
-            <img class="card" src="images/mushroom-red.png">
-            <div class="innerCardContent">
-                <h4>Fly agaric mushrooms</h4>
-                <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
-                    bright
-                    red
-                    mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is their
-                    hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
+    <div style="display: none;" id="displayResult">
+        <p style="margin-top: 36px;">17 results total</p>
+        <span class="searchrow column"><img src="images/mushroom.png" class="icon_title">
+            <h3>Mushrooms</h3>
+        </span>
+        <div class="cardstack">
+            <!-- product card 1 -->
+            <section class="card">
+                <img class="card" src="images/mushroom-red.png">
+                <div class="innerCardContent">
+                    <h4>Fly agaric mushrooms</h4>
+                    <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
+                        bright
+                        red
+                        mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is
+                        their
+                        hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
 
-            </div>
-        </section>
-        <!-- product card 2-->
-        <section class="card">
-            <img class="card" src="images/mushroom-red.png">
-            <div class="innerCardContent">
-                <h4>Fly agaric mushrooms</h4>
-                <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
-                    bright
-                    red
-                    mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is their
-                    hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
-            </div>
-        </section>
+                </div>
+            </section>
+            <!-- product card 2-->
+            <section class="card">
+                <img class="card" src="images/mushroom-red.png">
+                <div class="innerCardContent">
+                    <h4>Fly agaric mushrooms</h4>
+                    <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
+                        bright
+                        red
+                        mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is
+                        their
+                        hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
+                </div>
+            </section>
+        </div>
+        <span class="searchrow column"><img src="images/grill-hot.svg" class="icon_title">
+            <h3>Recipes</h3>
+        </span>
+        <div class="cardstack">
+            <!-- product card 1 -->
+            <section class="card">
+                <img class="card" src="images/mushroom-red.png">
+                <div class="innerCardContent">
+                    <h4>Fly agaric mushrooms</h4>
+                    <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
+                        bright
+                        red
+                        mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is
+                        their
+                        hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
+                </div>
+            </section>
+            <!-- product card 2-->
+            <section class="card">
+                <img class="card" src="images/mushroom-red.png">
+                <div class="innerCardContent">
+                    <h4>Fly agaric mushrooms</h4>
+                    <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
+                        bright
+                        red
+                        mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is
+                        their
+                        hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
+                </div>
+            </section>
+        </div>
     </div>
-    <span class="searchrow column"><img src="images/grill-hot.svg" class="icon_title">
-        <h3>Recipes</h3>
-    </span>
-    <div class="cardstack">
-        <!-- product card 1 -->
-        <section class="card">
-            <img class="card" src="images/mushroom-red.png">
-            <div class="innerCardContent">
-                <h4>Fly agaric mushrooms</h4>
-                <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
-                    bright
-                    red
-                    mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is their
-                    hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
-            </div>
-        </section>
-        <!-- product card 2-->
-        <section class="card">
-            <img class="card" src="images/mushroom-red.png">
-            <div class="innerCardContent">
-                <h4>Fly agaric mushrooms</h4>
-                <p>Fly agaric mushrooms, or Amanita muscaria, are known for their distinctive appearance. They're a
-                    bright
-                    red
-                    mushroom with white spots, kinda like Toad in Mario Kart. Another amazing quality of theirs is their
-                    hallucinogenic properties, courtesy of ibotenic acid and muscimol.</p>
-            </div>
-        </section>
+    <script>
 
-    </div>
+        var result = "Nothing found!";
+
+        function displaySearch() {
+            "use strict";
+
+            var displayResult = document.getElementById("displayResult");
+
+            window.open("search.html") //How do I display the result in this page?
+
+            displayResult.style.display = "block";
+            displayResult.innerHTML = result;
+        }
+
+        function doSearch() {
+            "use strict";
+
+            var searchField = document.getElementById("searchField").value;
+
+            displaySearch();
+
+    </script>
 </body>
 
 </html>
