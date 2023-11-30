@@ -25,14 +25,13 @@
         <div class="logorow column" style="flex-grow: 1;"><img src="images/mushroom-logo.png">
             <h1 style="clear: both;">MushROOM</h1><br>
         </div>
-        <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
-            <form action="" method="get">
-                <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
-                        class="input-field searchbar">
-                    <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
-                    <button class="btn"><i class="fa fa-filter"></i> Filters</button>
-            </form>
-        </div>
+        <div style="flex-grow: 4;">
+            <span>Search mushrooms and recipes</span>
+            <div class="input-icons searchrow" style="gap: 8px; width: 50%;">
+                <input type="search" id="Search" class="input-field searchbar">
+                <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+                <button class="btn"><i class="fa fa-filter"></i> Filters</button>
+            </div>
     </header>
     <!-- //Header ends -->
 
@@ -105,19 +104,17 @@
     <script>
 
         var result = "Nothing found!";
-        document.getElementById("searchButton").addEventListener('click', function displaySearch()) {
-
+        const SearchBtn = document.getElementById("searchButton");
+        SearchBtn.addEventListener('click', function () {
             var displayResult = document.getElementById("displayResult");
+            var searchInput = document.getElementById("Search");
+            if (searchInput.value != "") {
+                displayResult.style.display = "block";
+            } else {
+                alert("Please type something!")
+            }
 
-            displayResult.style.display = "block";
-        }
-
-        function doSearch() {
-
-
-            var searchField = document.getElementById("searchField").value;
-
-            displaySearch();
+        })
 
     </script>
 </body>
