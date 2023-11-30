@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mushroom Gallery</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic:wght@700&family=Jost:wght@400;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Livvic:wght@700&family=Jost:wght@400;600&display=swap">
 
     <style>
         body {
@@ -76,8 +78,22 @@
 </head>
 
 <body>
-    <h1 id="galleryTitle">Jacks Mushroom Gallery</h1>
-    <div id="searchBar">
+
+    <!-- Header starts -->
+    <header>
+        <div class="logorow column" style="flex-grow: 1;"><img src="images/mushroom-logo.png">
+            <h1 style="clear: both;">MushROOM</h1><br>
+        </div>
+        <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
+            <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
+                    class="input-field searchbar">
+                <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+                <button class="secondarybtn"><i class="fa fa-filter"></i> Filters</button>
+            </div>
+    </header>
+    <!-- //Header ends -->
+
+    <div id="searchBar" style="margin-bottom: 20px;">
         <label for="mushroomFilter">Filter by Mushroom Type:</label>
         <select id="mushroomFilter" onchange="filterGallery()">
             <option value="all">All Mushrooms</option>
@@ -92,45 +108,45 @@
         <input type="text" id="searchInput" placeholder="Enter mushroom name">
 
         <!-- Removed the onclick attribute from the button -->
-        <button>Apply</button>
+        <button class="secondarybtn">Apply</button>
     </div>
     <div id="gallery">
         <div id="slideshow">
 
             <div class="slide" data-type="portobello" id="portobelloSlide">
-                <img src="image1.jpg" alt="Mushroom 1">
+                <img src="images/image1.jpg" alt="Mushroom 1">
                 <div class="mushroomName">Amanita muscaria</div>
             </div>
             <div class="slide" data-type="oyster">
-                <img src="image2.jpg" alt="Mushroom 2">
+                <img src="images/image2.jpg" alt="Mushroom 2">
                 <div class="mushroomName">Death Cap</div>
             </div>
             <div class="slide" data-type="button">
-                <img src="image3.jpg" alt="Mushroom 3">
+                <img src="images/image3.jpg" alt="Mushroom 3">
                 <div class="mushroomName">Oyster Mushroom</div>
             </div>
             <div class="slide" data-type="morel">
-                <img src="image4.jpg" alt="Mushroom 4">
+                <img src="images/image4.jpg" alt="Mushroom 4">
                 <div class="mushroomName">Honey Fungus</div>
             </div>
             <div class="slide" data-type="button">
-                <img src="image5.jpg" alt="Mushroom 5">
+                <img src="images/image5.jpg" alt="Mushroom 5">
                 <div class="mushroomName">Linzhi</div>
             </div>
             <div class="slide" data-type="portobello">
-                <img src="image6.jpg" alt="Mushroom 6">
+                <img src="images/image6.jpg" alt="Mushroom 6">
                 <div class="mushroomName">Pholiota</div>
             </div>
             <div class="slide" data-type="oyster">
-                <img src="image7.jpg" alt="Mushroom 7">
+                <img src="images/image7.jpg" alt="Mushroom 7">
                 <div class="mushroomName">Pholiota squarrosa</div>
             </div>
             <div class="slide" data-type="morel">
-                <img src="image8.jpg" alt="Mushroom 8">
+                <img src="images/image8.jpg" alt="Mushroom 8">
                 <div class="mushroomName">Omphalotus japonicus</div>
             </div>
             <div class="slide" data-type="flyAgaric">
-                <img src="image9.jpg" alt="Mushroom 9">
+                <img src="images/image9.jpg" alt="Mushroom 9">
                 <div class="mushroomName">Mycena haematopus</div>
             </div>
             <!-- Add more slides as needed -->
@@ -165,7 +181,3 @@
 </body>
 
 </html>
-
-
-
-
