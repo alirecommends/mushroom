@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Mushroom Map</title>
+  <style>
+    #map {
+      height: 800px;
+      width: 100%;
+    }
+
+    body {
+      background-color: #F8EFE9;
+      color: #512D7A;
+      /* Font color */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Mushroom Map</h1>
+  <h2>Check Out the Mushrooms in Your Area</h2>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      var options = {
+        zoom: 12,
+        center: { lat: 43.651070, lng: -79.347015 }
+      }
+
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      var markers = [
+        {
+          coords: { lat: 43.651070, lng: -79.347015 },
+          content: '<div><h1>Wood Hedgehog</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/1871609/medium.jpg" alt="Wood Hedgehog" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635705">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.665973, lng: -79.397483 },
+          content: '<div><h1>Common Ink Cap</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/2893589/large.jpeg" alt="Common Ink Cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635707">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.639679, lng: -79.455993 },
+          content: '<div><h1>indigo milk cap</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/66266/medium.jpg" alt="indigo milk cap" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635696">More Info</a></div>'
+        },
+        {
+          coords: { lat: 43.651070, lng: -79.547515 },
+          content: '<div><h1>lobster mushroom</h1><img src="https://inaturalist-open-data.s3.amazonaws.com/photos/7069967/medium.jpeg" alt="lobster mushroom" style="width:100px;"><a href="https://www.inaturalist.org/guide_taxa/635698">More Info</a></div>'
+        }
+      ];
+
+      markers.forEach(function (markerData) {
+        addMarker(markerData);
+      });
+
+      function addMarker(props) {
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map
+        });
+
+        if (props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+
+          marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCez87Yrs7WOgwiMQBLnNSt4TBY8h-GGKg&callback=initMap">
+    </script>
+
+</body>
+
+</html>
