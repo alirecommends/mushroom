@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,8 @@
             align-items: center;
         }
 
-        h1, .cart-title {
+        h1,
+        .cart-title {
             font-family: 'Livvic', sans-serif;
             color: #512D7A;
         }
@@ -40,7 +42,7 @@
 
         .product {
             background: #EAD1DC;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
             display: flex;
@@ -63,11 +65,15 @@
             border-radius: 50%;
         }
 
-        .product-details, .purchase-summary, .cart-container, .form-group {
+        .product-details,
+        .purchase-summary,
+        .cart-container,
+        .form-group {
             text-align: center;
         }
 
-        .product-title, .cart-item-title {
+        .product-title,
+        .cart-item-title {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 10px;
@@ -83,7 +89,8 @@
             width: 60px;
         }
 
-        .add-to-cart, .confirm-purchase {
+        .add-to-cart,
+        .confirm-purchase {
             background-color: #512D7A;
             color: white;
             border: none;
@@ -93,7 +100,8 @@
             transition: background 0.2s ease-in-out;
         }
 
-        .add-to-cart:hover, .confirm-purchase:hover {
+        .add-to-cart:hover,
+        .confirm-purchase:hover {
             background-color: #46395c;
         }
 
@@ -104,7 +112,7 @@
 
         .cart-container {
             background: #EAD1DC;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 20px;
             width: 500px;
@@ -182,14 +190,14 @@
         }
 
         .card-details-container h2 {
-           text-align: center;
+            text-align: center;
         }
 
         .card-details-container {
             background: #EAD1DC;
             padding: 30px 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
             width: 450px;
             text-align: left;
@@ -258,20 +266,24 @@
             text-align: center;
         }
 
-        .form-input, .expiration-input, .cvv-input {
+        .form-input,
+        .expiration-input,
+        .cvv-input {
             height: 50px;
             box-sizing: border-box;
         }
-     </style>
+    </style>
 </head>
+
 <body>
     <h1>Purchase Mushrooms</h1>
 
     <div class="shop-container">
         <div class="product">
             <div class="tooltip">
-                <img src="mushroom1.jpg" alt="Enoki Twilight" class="product-image">
-                <span class="tooltip-text">A favorite in Asian cuisine, Enoki Twilight mushrooms boast a delicate texture and a fruity, almost-nutty flavor profile.</span>
+                <img src="images/mushroom1.jpg" alt="Enoki Twilight" class="product-image">
+                <span class="tooltip-text">A favorite in Asian cuisine, Enoki Twilight mushrooms boast a delicate
+                    texture and a fruity, almost-nutty flavor profile.</span>
             </div>
             <div class="product-details">
                 <div class="product-title">Enoki Twilight</div>
@@ -282,8 +294,9 @@
 
         <div class="product">
             <div class="tooltip">
-                <img src="mushroom2.jpg" alt="Shiitake Whisper" class="product-image">
-                <span class="tooltip-text">Rich and buttery, Shiitake Whisper mushrooms deliver a woodsy aroma and a savory depth, elevating any dish to gourmet status.</span>
+                <img src="images/mushroom2.jpg" alt="Shiitake Whisper" class="product-image">
+                <span class="tooltip-text">Rich and buttery, Shiitake Whisper mushrooms deliver a woodsy aroma and a
+                    savory depth, elevating any dish to gourmet status.</span>
             </div>
             <div class="product-details">
                 <div class="product-title">Shiitake Whisper</div>
@@ -294,8 +307,9 @@
 
         <div class="product">
             <div class="tooltip">
-                <img src="mushroom3.jpg" alt="Portobello Royale" class="product-image">
-                <span class="tooltip-text">Portobello Royale mushrooms are perfect for grilling, stuffing, or sautéing. Their robust flavor makes them a grill master's dream.</span>
+                <img src="images/mushroom3.jpg" alt="Portobello Royale" class="product-image">
+                <span class="tooltip-text">Portobello Royale mushrooms are perfect for grilling, stuffing, or sautéing.
+                    Their robust flavor makes them a grill master's dream.</span>
             </div>
             <div class="product-details">
                 <div class="product-title">Portobello Royale</div>
@@ -305,175 +319,185 @@
         </div>
     </div>
 
-<div class="cart-container">
-    <h2 class="cart-title">Shopping Cart</h2>
-    <ul class="cart-items" id="cart-items">
-    </ul>
-    <div class="purchase-summary">
-        <div class="total-label">Total: $<span class="total-price" id="total" aria-live="polite">0.00</span></div>
-        <button class="confirm-purchase form-submit-button">Confirm Purchase</button>
-        <p class="purchase-complete">Purchase complete! Thank you for shopping with us.</p>
+    <div class="cart-container">
+        <h2 class="cart-title">Shopping Cart</h2>
+        <ul class="cart-items" id="cart-items">
+        </ul>
+        <div class="purchase-summary">
+            <div class="total-label">Total: $<span class="total-price" id="total" aria-live="polite">0.00</span></div>
+            <button class="confirm-purchase form-submit-button">Confirm Total</button>
+
+        </div>
     </div>
-</div>
 
-<div class="card-details-container" style="display: none;">
-    <h2 class="cart-title">Card Details</h2>
-    <form id="card-form">
-        <div class="form-group">
-            <label for="card-name" class="form-label">Cardholder Name</label>
-            <input type="text" id="card-name" class="form-input" placeholder="Name on card" aria-label="Cardholder Name" required>
-        </div>
-        <div class="form-group">
-            <label for="card-number" class="form-label">Card Number</label>
-            <input type="text" id="card-number" class="form-input" placeholder="1234 5678 9012 3456" required pattern="\d{4} \d{4} \d{4} \d{4}" title="Enter a 16-digit number in the format 1234 5678 9012 3456" aria-label="Card Number">
-        </div>
-        <div class="form-row">
+    <div class="card-details-container" style="display: none;">
+        <h2 class="cart-title">Card Details</h2>
+        <form id="card-form">
             <div class="form-group">
-                <label for="card-expiration" class="form-label">Expiration Date (MM/YY)</label>
-                <input type="text" id="card-expiration" class="form-input expiration-input" placeholder="MM/YY" required pattern="\d{2}/\d{2}" title="Enter the expiration date in MM/YY format" aria-label="Card Expiration Date MM slash YY">
+                <label for="card-name" class="form-label">Cardholder Name</label>
+                <input type="text" id="card-name" class="form-input" placeholder="Name on card"
+                    aria-label="Cardholder Name" required>
             </div>
             <div class="form-group">
-                <label for="card-cvv" class="form-label">CVV</label>
-                <input type="text" id="card-cvv" class="form-input cvv-input" placeholder="CVV" required pattern="\d{3}" title="Enter a 3-digit CVV number" aria-label="Card CVV">
+                <label for="card-number" class="form-label">Card Number</label>
+                <input type="text" id="card-number" class="form-input" placeholder="1234 5678 9012 3456" required
+                    pattern="\d{4} \d{4} \d{4} \d{4}" title="Enter a 16-digit number in the format 1234 5678 9012 3456"
+                    aria-label="Card Number">
             </div>
-            <button type="submit" class="form-submit-button" aria-label="Submit Payment">Submit Payment</button>
-        </div>
-    </form>
-</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="card-expiration" class="form-label">(MM/YY)</label>
+                    <input type="text" id="card-expiration" class="form-input expiration-input" placeholder="MM/YY"
+                        required pattern="\d{2}/\d{2}" title="Enter the expiration date in MM/YY format"
+                        aria-label="Card Expiration Date MM slash YY">
+                </div>
+                <div class="form-group">
+                    <label for="card-cvv" class="form-label">CVV</label>
+                    <input type="text" id="card-cvv" class="form-input cvv-input" placeholder="CVV" required
+                        pattern="\d{3}" title="Enter a 3-digit CVV number" aria-label="Card CVV">
+                </div>
+                <button type="submit" class="form-submit-button" aria-label="Submit Payment">Submit Payment</button>
+            </div>
+            <div>
+                <p class="purchase-complete">Purchase complete! Thank you for shopping with us.</p>
+            </div>
+        </form>
+    </div>
 
-<script>
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const productDiv = button.closest('.product-details');
-        const title = productDiv.querySelector('.product-title').textContent;
-        const quantity = productDiv.querySelector('.quantity').value;
-        const price = productDiv.querySelector('.quantity').getAttribute('data-price');
-        const total = Number(quantity) * Number(price);
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productDiv = button.closest('.product-details');
+                const title = productDiv.querySelector('.product-title').textContent;
+                const quantity = productDiv.querySelector('.quantity').value;
+                const price = productDiv.querySelector('.quantity').getAttribute('data-price');
+                const total = Number(quantity) * Number(price);
 
-        const cartItems = document.getElementById('cart-items');
-        const listItem = document.createElement('li');
-        listItem.className = 'cart-item';
-        listItem.innerHTML = `
+                const cartItems = document.getElementById('cart-items');
+                const listItem = document.createElement('li');
+                listItem.className = 'cart-item';
+                listItem.innerHTML = `
             <span class="cart-item-title">${title}</span>
             <span class="cart-item-quantity">x ${quantity}</span>
             <span class="cart-item-price">$${total.toFixed(2)}</span>
         `;
-        cartItems.appendChild(listItem);
+                cartItems.appendChild(listItem);
 
-        updateTotal();
+                updateTotal();
 
-        button.classList.add('disabled');
-        button.disabled = true;
-    });
-});
-document.getElementById('card-name').addEventListener('input', function(e) {
-    this.value = this.value.replace(/[^a-zA-Z\s]/gi, '');
-});
+                button.classList.add('disabled');
+                button.disabled = true;
+            });
+        });
+        document.getElementById('card-name').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^a-zA-Z\s]/gi, '');
+        });
 
-document.getElementById('card-number').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
-    
-    if (this.value.length > 19) {
-        this.value = this.value.slice(0, 19);
-    }
-});
+        document.getElementById('card-number').addEventListener('input', function (e) {
+            this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
 
-document.getElementById('card-expiration').addEventListener('input', function(e) {
-    var input = this.value.replace(/\D/g, '');
-    if (input.length > 2) {
-        input = input.slice(0, 2) + '/' + input.slice(2, 4);
-    }
-    this.value = input;
+            if (this.value.length > 19) {
+                this.value = this.value.slice(0, 19);
+            }
+        });
 
-    if (this.value.length > 5) {
-        this.value = this.value.slice(0, 5);
-    }
-});
+        document.getElementById('card-expiration').addEventListener('input', function (e) {
+            var input = this.value.replace(/\D/g, '');
+            if (input.length > 2) {
+                input = input.slice(0, 2) + '/' + input.slice(2, 4);
+            }
+            this.value = input;
 
-document.getElementById('card-cvv').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\D/g, '');
-    if (this.value.length > 3) {
-        this.value = this.value.slice(0, 3);
-    }
-});
-function updateTotal() {
-    let total = 0;
-    document.querySelectorAll('#cart-items li').forEach(item => {
-        const priceText = item.querySelector('.cart-item-price').textContent;
-        const itemTotal = Number(priceText.substring(1));
-        total += itemTotal;
-    });
-    document.getElementById('total').textContent = total.toFixed(2);
-}
+            if (this.value.length > 5) {
+                this.value = this.value.slice(0, 5);
+            }
+        });
 
-document.querySelector('.confirm-purchase').addEventListener('click', function() {
-    const cartItems = document.getElementById('cart-items').children.length;
-    if (cartItems > 0) {
-        document.querySelector('.card-details-container').style.display = 'block';
-        this.style.display = 'none';
-    } else {
-        alert('Your cart is empty!');
-    }
-});
+        document.getElementById('card-cvv').addEventListener('input', function (e) {
+            this.value = this.value.replace(/\D/g, '');
+            if (this.value.length > 3) {
+                this.value = this.value.slice(0, 3);
+            }
+        });
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('#cart-items li').forEach(item => {
+                const priceText = item.querySelector('.cart-item-price').textContent;
+                const itemTotal = Number(priceText.substring(1));
+                total += itemTotal;
+            });
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
 
-document.getElementById('card-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    var cardName = document.getElementById('card-name').value;
-    if (!/^[a-zA-Z\s]*$/.test(cardName)) {
-        alert('Invalid name. Please enter only letters.');
-        return;
-    }
+        document.querySelector('.confirm-purchase').addEventListener('click', function () {
+            const cartItems = document.getElementById('cart-items').children.length;
+            if (cartItems > 0) {
+                document.querySelector('.card-details-container').style.display = 'block';
+                this.style.display = 'none';
+            } else {
+                alert('Your cart is empty!');
+            }
+        });
 
-    var cardNumber = document.getElementById('card-number').value;
-    if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(cardNumber)) {
-        alert('Invalid card number. Please enter the number in the format 1234 5678 9012 3456.');
-        return;
-    }
+        document.getElementById('card-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var cardName = document.getElementById('card-name').value;
+            if (!/^[a-zA-Z\s]*$/.test(cardName)) {
+                alert('Invalid name. Please enter only letters.');
+                return;
+            }
 
-    var cardExpiration = document.getElementById('card-expiration').value;
-    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(cardExpiration)) {
-        alert('Invalid expiration date. Please enter MM/YY.');
-        return;
-    }
+            var cardNumber = document.getElementById('card-number').value;
+            if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(cardNumber)) {
+                alert('Invalid card number. Please enter the number in the format 1234 5678 9012 3456.');
+                return;
+            }
 
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear() % 100;
-    var currentMonth = currentDate.getMonth() + 1;
-    var [expMonth, expYear] = cardExpiration.split('/').map(Number);
+            var cardExpiration = document.getElementById('card-expiration').value;
+            if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(cardExpiration)) {
+                alert('Invalid expiration date. Please enter MM/YY.');
+                return;
+            }
 
-    if (expYear < currentYear || (expYear === currentYear && expMonth < currentMonth)) {
-        alert('Card expired.');
-        return;
-    }
+            var currentDate = new Date();
+            var currentYear = currentDate.getFullYear() % 100;
+            var currentMonth = currentDate.getMonth() + 1;
+            var [expMonth, expYear] = cardExpiration.split('/').map(Number);
 
-    var cardCvv = document.getElementById('card-cvv').value;
-    if (!/^\d{3}$/.test(cardCvv)) {
-        alert('Invalid CVV. Please enter a 3-digit number.');
-        return;
-    }
+            if (expYear < currentYear || (expYear === currentYear && expMonth < currentMonth)) {
+                alert('Card expired.');
+                return;
+            }
 
-    var purchaseCompleteMessage = document.querySelector('.purchase-complete');
-    purchaseCompleteMessage.style.display = 'block';
+            var cardCvv = document.getElementById('card-cvv').value;
+            if (!/^\d{3}$/.test(cardCvv)) {
+                alert('Invalid CVV. Please enter a 3-digit number.');
+                return;
+            }
 
-    document.getElementById('cart-items').innerHTML = '';
-    document.getElementById('total').textContent = '0.00';
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.classList.remove('disabled');
-        button.disabled = false;
-    });
-});
+            var purchaseCompleteMessage = document.querySelector('.purchase-complete');
+            purchaseCompleteMessage.style.display = 'block';
 
-document.querySelectorAll('.product-title').forEach(title => {
-    const tooltip = title.previousElementSibling;
-    title.addEventListener('mouseenter', () => {
-        tooltip.style.visibility = 'visible';
-        tooltip.style.opacity = '1';
-    });
-    title.addEventListener('mouseleave', () => {
-        tooltip.style.visibility = 'hidden';
-        tooltip.style.opacity = '0';
-    });
-});
-</script>
+            document.getElementById('cart-items').innerHTML = '';
+            document.getElementById('total').textContent = '0.00';
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.classList.remove('disabled');
+                button.disabled = false;
+            });
+        });
+
+        document.querySelectorAll('.product-title').forEach(title => {
+            const tooltip = title.previousElementSibling;
+            title.addEventListener('mouseenter', () => {
+                tooltip.style.visibility = 'visible';
+                tooltip.style.opacity = '1';
+            });
+            title.addEventListener('mouseleave', () => {
+                tooltip.style.visibility = 'hidden';
+                tooltip.style.opacity = '0';
+            });
+        });
+    </script>
 </body>
+
 </html>
