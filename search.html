@@ -28,13 +28,13 @@
         <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
             <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
                     class="input-field searchbar">
-                <button id="searchbtn" class="btn"><i class="fa fa-search"></i> Search</button>
+                <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
                 <button class="btn"><i class="fa fa-filter"></i> Filters</button>
             </div>
     </header>
     <!-- //Header ends -->
 
-    <div style="display: none;" id="displayResult">
+    <div id="displayResult" style="display: none;">
         <p style="margin-top: 36px;">17 results total</p>
         <span class="searchrow column"><img src="images/mushroom.png" class="icon_title">
             <h3>Mushrooms</h3>
@@ -103,20 +103,15 @@
     <script>
 
         var result = "Nothing found!";
-
-        function displaySearch() {
-            "use strict";
+        document.getElementById("searchButton").addEventListener('click', function displaySearch()) {
 
             var displayResult = document.getElementById("displayResult");
 
-            window.open("search.html") //How do I display the result in this page?
-
             displayResult.style.display = "block";
-            displayResult.innerHTML = result;
         }
 
         function doSearch() {
-            "use strict";
+
 
             var searchField = document.getElementById("searchField").value;
 
