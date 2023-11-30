@@ -3,6 +3,10 @@ p {
     font-weight: 400;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     font-family: 'Paytone One', sans-serif;
     font-size: 3rem;

@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mushroom Emporium Sign In Page</title>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@700&family=Jost:wght@400&display=swap"
         rel="stylesheet">
--->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,20 +144,19 @@
 
 <body>
 
-
     <!-- Header starts -->
     <header>
-        <div class="logorow column" style="flex-grow: 1;"><img src="images/mushroom-logo.png">
-            <h1 style="clear: both;">MushROOM</h1><br>
+        <div class="logorow column" style="flex-grow: 1;"><a class="logorow column" style="flex-grow: 1;"
+                href="index.html"><img src="images/mushroom-logo.png">
+                <h1 style="clear: both;">MushROOM</h1>
+            </a><br>
         </div>
         <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span>
-            <form action="/search.html" method="post">
-                <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
-                        class="input-field searchbar">
-                    <button class="btn" value="search"><i class="fa fa-search"></i> Search</button>
-                    <button class="btn"><i class="fa fa-filter"></i> Filters</button>
-                </div>
-            </form>
+            <div class="input-icons searchrow" style="gap: 8px; width: 50%;"><input type="text" id="Search"
+                    class="input-field searchbar">
+                <button id="searchButton" class="btn"><i class="fa fa-search"></i> Search</button>
+                <button class="secondarybtn"><i class="fa fa-filter"></i> Filters</button>
+            </div>
     </header>
     <!-- //Header ends -->
 
@@ -181,10 +179,44 @@
                     <a href="/forgot-password">Forgot Password?</a> |
                     <a href="/signup">Sign up</a>
                 </div>
-
             </form>
+            <!-- Password visibility toggle -->
+            <div style="display: inline-flex; justify-content: center; margin-top: 10px;"><input type="checkbox"
+                    id="togglePassword"> Show
+                Password</div>
         </div>
     </div>
+
+    <script>
+
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            let hasError = false;
+            if (!document.getElementById('username').value) {
+                alert('Please enter your username.');
+                hasError = true;
+            }
+
+            if (!document.getElementById('password').value) {
+                alert('Please enter your password.');
+                hasError = true;
+            }
+
+            if (hasError) {
+                e.preventDefault();
+            }
+        });
+
+    </script>
 </body>
 
 </html>
