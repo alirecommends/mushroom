@@ -6,17 +6,19 @@ p {
 h1 {
     font-family: 'Paytone One', sans-serif;
     font-size: 3rem;
+    font-weight: 700;
     color: #7C45BA;
 }
 
 h2 {
-    font-family: 'Unna', serif;
-    text-transform: uppercase;
+    font-family: 'Livvic', sans-serif;
+    color: #512D7A;
+    text-align: center;
+    margin: 0 0 20px;
 }
 
 h3 {
     font-family: 'Unna', serif;
-    text-transform: uppercase;
 }
 
 span {
@@ -27,18 +29,27 @@ span {
 
 body {
     background-color: #F7F4EF;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    margin: 0;
+    color: #512D7A;
 }
 
 header {
     display: inline-flex;
     width: 100%;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
 }
 
-.input {
+.input[text] {
     width: 500px;
     height: 30px;
+    border: 1px solid #EAD1DC;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .searchrow {
