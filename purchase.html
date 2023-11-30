@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase Mushrooms</title>
     <link href="https://fonts.googleapis.com/css2?family=Livvic&family=Jost&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Jost', sans-serif;
@@ -18,14 +25,9 @@
             align-items: baseline;
         }
 
-        h1,
         .cart-title {
             font-family: 'Livvic', sans-serif;
             color: #512D7A;
-        }
-
-        h1 {
-            text-align: center;
         }
 
         .cart-title {
@@ -125,7 +127,7 @@
             background: #EAD1DC;
             position: absolute;
             left: 70%;
-            top: 10%;
+            top: 25%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 20px;
@@ -291,7 +293,21 @@
 </head>
 
 <body>
-    <h1>Purchase Mushrooms</h1>
+
+    <!-- Header starts -->
+    <header>
+        <div class="logorow column" style="flex-grow: 1;"><img src="images/mushroom-logo.png">
+            <h1 style="clear: both;">MushROOM</h1><br>
+        </div>
+        <div style="flex-grow: 4;"><span>Search mushrooms and recipes</span><br <div class="input-icons searchrow"
+                style="gap: 8px; width: 50%;"><input type="text" id="Search" class="input-field searchbar">
+            <button class="btn"><i class="fa fa-search"></i> Search</button>
+            <button class="btn"><i class="fa fa-filter"></i> Filters</button>
+        </div>
+    </header>
+
+    <!-- //Header ends -->
+    <h2>Purchase Mushrooms</h2>
 
     <div class="shop-container">
         <div class="product">
@@ -323,7 +339,8 @@
         <div class="product">
             <div class="tooltip">
                 <img src="images/mushroom3.jpg" alt="Portobello Royale" class="product-image">
-                <span class="tooltip-text">Portobello Royale mushrooms are perfect for grilling, stuffing, or sautéing.
+                <span class="tooltip-text">Portobello Royale mushrooms are perfect for grilling, stuffing, or
+                    sautéing.
                     Their robust flavor makes them a grill master's dream.</span>
             </div>
             <div class="product-details">
@@ -339,7 +356,8 @@
         <ul class="cart-items" id="cart-items">
         </ul>
         <div class="purchase-summary">
-            <div class="total-label">Total: $<span class="total-price" id="total" aria-live="polite">0.00</span></div>
+            <div class="total-label">Total: $<span class="total-price" id="total" aria-live="polite">0.00</span>
+            </div>
             <button class="confirm-purchase form-submit-button">Confirm Total</button>
 
         </div>
@@ -371,7 +389,8 @@
                         <input type="text" id="card-cvv" class="form-input cvv-input" placeholder="CVV" required
                             pattern="\d{3}" title="Enter a 3-digit CVV number" aria-label="Card CVV">
                     </div>
-                    <button type="submit" class="form-submit-button" aria-label="Submit Payment">Submit Payment</button>
+                    <button type="submit" class="form-submit-button" aria-label="Submit Payment">Submit
+                        Payment</button>
                 </div>
                 <div>
                     <p class="purchase-complete">Purchase complete! Thank you for shopping with us.</p>

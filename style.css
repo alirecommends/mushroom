@@ -9,6 +9,11 @@ h1 {
     color: #7C45BA;
 }
 
+h2 {
+    font-family: 'Unna', serif;
+    text-transform: uppercase;
+}
+
 h3 {
     font-family: 'Unna', serif;
     text-transform: uppercase;
@@ -24,6 +29,13 @@ body {
     background-color: #F7F4EF;
 }
 
+header {
+    display: inline-flex;
+    width: 100%;
+    justify-content: baseline;
+    align-items: center;
+}
+
 .input {
     width: 500px;
     height: 30px;
@@ -37,7 +49,7 @@ body {
 }
 
 .searchbar {
-    width: 100%;
+    width: 300px;
 }
 
 .logorow {
