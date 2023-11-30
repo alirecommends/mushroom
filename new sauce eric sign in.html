@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack's Mushroom Emporium Sign In Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@700&family=Jost:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: #F8EFE9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #512D7A;
+        }
+
+        .login-container {
+            background-color: #EAD1DC;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h2 {
+            font-family: 'Livvic', sans-serif;
+            color: #512D7A;
+            text-align: center;
+            margin: 0 0 20px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #EAD1DC;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #512D7A;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type=submit]:hover {
+            background-color: #3A1A55;
+        }
+
+        .form-footer, .social-signin {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-footer a, .social-signin button {
+            text-decoration: none;
+            color: #512D7A;
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-facebook, .btn-google, .btn-twitter, .btn-instagram {
+            background-color: #3b5998;
+        }
+
+        .btn-google {
+            background-color: #db4437;
+        }
+
+        .btn-twitter {
+            background-color: #1da1f2;
+        }
+
+        .btn-instagram {
+            background-color: #E1306C;
+        }
+
+        .btn-facebook:hover {
+            background-color: #334d84;
+        }
+
+        .btn-google:hover {
+            background-color: #c1351e;
+        }
+
+        .btn-twitter:hover {
+            background-color: #198cd5;
+        }
+
+        .btn-instagram:hover {
+            background-color: #C13584;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        
+<h2>Sign In</h2>
+        <form action="/login" method="post">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="submit" value="Sign In">
+
+            <div class="social-signin">
+                <button class="btn-facebook"><i class="fab fa-facebook-f"></i> Sign in with Facebook</button>
+                <button class="btn-google"><i class="fab fa-google"></i> Sign in with Google</button>
+                <button class="btn-twitter"><i class="fab fa-twitter"></i> Sign in with Twitter</button>
+                <button class="btn-instagram"><i class="fab fa-instagram"></i> Sign in with Instagram</button>
+            </div>
+
+            <div class="form-footer">
+                <a href="/forgot-password">Forgot Password?</a> |
+                <a href="/signup">Sign up</a>
+            </div>
+
+        </form>
+        <!-- Password visibility toggle -->
+        <input type="checkbox" id="togglePassword"> Show Password
+    </div>
+
+    <script>
+        
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        
+        document.querySelector('form').addEventListener('submit', function (e) {
+            let hasError = false;
+            if (!document.getElementById('username').value) {
+                alert('Please enter your username.');
+                hasError = true;
+            }
+
+            if (!document.getElementById('password').value) {
+                alert('Please enter your password.');
+                hasError = true;
+            }
+
+            if (hasError) {
+                e.preventDefault(); 
+            }
+        });
+
+    </script>
+</body>
+</html>
