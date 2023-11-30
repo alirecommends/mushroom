@@ -74,14 +74,18 @@
 
       <label for="DOB">Date of Birth:</label>
       <input type="date" id="DOB" name="DOB">
-      <br><br>
-
-      <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
-      <label for="newsletter"> Subscribe to our Newsletter</label><br>
       <br>
 
-      <input type="checkbox" id="terms" name="terms" value="terms">
-      <label for="terms"> Agree to our Terms and Conditions</label><br><br>
+      <div style="display: inline; justify-content:stretch;"><input type="checkbox" id="newsletter" name="newsletter"
+          value="newsletter">
+        <label for="newsletter"> Subscribe to our Newsletter</label>
+      </div>
+      <br>
+      <div style="display: inline; justify-content:stretch;">
+        <input type="checkbox" id="terms" name="terms" value="terms">
+        <label for="terms"> Agree to our Terms and Conditions</label>
+      </div>
+      <br>
 
       <button type="button" onclick="validateForm()" class="btn">Sign Up</button>
     </div>
