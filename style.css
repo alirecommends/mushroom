@@ -58,7 +58,7 @@ select {
 }
 
 input[checkbox] {
-    width: 24px;
+    width: 34px;
 }
 
 input {
@@ -167,13 +167,18 @@ img.icon_title {
 .container {
     margin-left: 200px;
     display: inline-flex;
-    width: 100%;
+    width: 80%;
+    background-color: white;
+    padding-top: 20px;
+    border-radius: 15px;
 }
 
 .image-container {
     margin-left: 20px;
     /* Adjust the margin as needed */
     width: 50%;
+    justify-content: center;
+    text-align: center;
 }
 
 .formcontainer {
@@ -193,4 +198,17 @@ footer {
 
 #displayResult {
     margin-left: 200px;
+}
+
+input[submit].sidebar {
+    height: 30px;
+    background-color: #EAD1DC;
+    color: black;
+    width: 100%;
+}
+
+#sidebar {
+    text-align: left;
+    justify-content: left;
+    flex: auto;
 }
